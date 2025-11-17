@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Driver Dashboard - ResQon</title>
+<style>
+  body { font-family:Arial; background:#f8f8f8; text-align:center; }
+  h2 { color:#e63946; margin-top:20px; }
+  ul { list-style:none; padding:0; margin-top:20px; }
+  li { background:white; margin:10px auto; padding:15px; width:80%; border-radius:8px;
+       box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+  button { margin-top:20px; padding:10px 20px; background:#e63946; color:white;
+           border:none; border-radius:8px; cursor:pointer; }
+  button:hover { background:#c1121f; }
+</style>
+</head>
+<body>
+  <h2>Driver Dashboard</h2>
+  <p>Nearby Ambulance Requests:</p>
+  <ul id="requests"></ul>
+  <button onclick="window.location='index.html'">⬅️ Back to Home</button>
+
+<script>
+const requests = [
+  { name: "Rahul Singh", emergency: "Accident", location: "Salt Lake" },
+  { name: "Priya Das", emergency: "Cardiac", location: "Park Street" },
+  { name: "Ravi Kumar", emergency: "Maternity", location: "Howrah" }
+];
+const list = document.getElementById("requests");
+requests.forEach(r => {
+  const li = document.createElement("li");
+  li.textContent = `${r.name} - ${r.emergency} (${r.location})`;
+  list.appendChild(li);
+});
+</script>
+</body>
+</html>
